@@ -1,0 +1,30 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode rootProject.versionCode
+        versionName rootProject.versionName
+
+        testInstrumentationRunner rootProject.testInstrumentationRunner
+    }
+    buildTypes {
+        release {
+            minifyEnabled rootProject.libraryMinifyEnabled
+            proguardFiles getDefaultProguardFile(rootProject.proguardFile1), rootProject.proguardFile2
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: rootProject.libsDirectory, include: rootProject.libsDirectoryIncludes)
+
+    implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
+
+    testImplementation "junit:junit:$jUnitVersion"
+    androidTestImplementation "com.android.support.test:runner:$testRunnerVersion"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$espressoVersion"
+}

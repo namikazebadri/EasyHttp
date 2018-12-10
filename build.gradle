@@ -1,0 +1,73 @@
+ext {
+    compileSdkVersion = 27
+    applicationId = "com.unisbadri.easyhttp"
+    minSdkVersion = 15
+    targetSdkVersion = 27
+    versionCode = 1
+    versionName = "1.0"
+    testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
+
+    appMinifyEnabled = false
+    libraryMinifyEnabled = false
+
+    proguardFile1 = "proguard-android.txt"
+    proguardFile2 = "proguard-rules.pro"
+
+    libsDirectory = "libs"
+    libsDirectoryIncludes = ['*.jar']
+
+    compileModuleName = ":easyhttp"
+
+    supportLibraryVersion = "27.1.1"
+
+    jUnitVersion = "4.12"
+    testRunnerVersion = "1.0.2"
+    espressoVersion = "3.0.2"
+
+    bintrayRepo = 'com.unisbadri.android'
+    bintrayName = 'easyhttp'
+
+    publishedGroupId = 'com.unisbadri.android'
+    libraryName = 'easyhttp'
+    artifact = 'easyhttp'
+
+    libraryDescription = 'Android okhttp3 easier implementations.'
+
+    siteUrl = 'https://github.com/namikazebadri/EasyHttp'
+    gitUrl = 'https://github.com/namikazebadri/EasyHttp.git'
+
+    libraryVersion = '0.1.0'
+
+    developerId = 'namikazebadri'
+    developerName = 'Unis Badri'
+    developerEmail = 'namikaze.badri@gmail.com'
+    licenseName = 'The MIT License'
+    licenseUrl = 'https://raw.githubusercontent.com/namikazebadri/EasyHttp/master/LICENSE'
+    allLicenses = ["MIT"]
+}
+
+buildscript {
+    ext.gradleVersion = "3.1.2"
+    ext.bintrayVersion = "1.4"
+    ext.mavenVersion = "1.4.1"
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:3.2.1"
+        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:$bintrayVersion"
+        classpath "com.github.dcendents:android-maven-gradle-plugin:$mavenVersion"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
